@@ -448,6 +448,7 @@
             btnSeeFullOrder.TabIndex = 15;
             btnSeeFullOrder.Text = "See Full Order";
             btnSeeFullOrder.UseVisualStyleBackColor = true;
+            btnSeeFullOrder.Click += BtnSeeFullOrderClickEH;
             // 
             // FrmPizzaMaker
             // 

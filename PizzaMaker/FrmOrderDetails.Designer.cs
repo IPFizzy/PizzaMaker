@@ -48,6 +48,7 @@
             Controls.Add(lblOrderDetails);
             Name = "FrmOrderDetails";
             Text = "Pizza Order Details";
+            Load += FrmOrderDetails_Load;
             ResumeLayout(false);
             PerformLayout();
         }
