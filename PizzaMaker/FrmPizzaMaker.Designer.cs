@@ -397,6 +397,7 @@
             picPizzaBoxColor.Size = new Size(211, 61);
             picPizzaBoxColor.TabIndex = 10;
             picPizzaBoxColor.TabStop = false;
+            picPizzaBoxColor.Click += PicPizzaBoxColorClickEH;
             // 
             // lblPrice
             // 
@@ -426,6 +427,7 @@
             btnResetForm.TabIndex = 13;
             btnResetForm.Text = "Reset Form";
             btnResetForm.UseVisualStyleBackColor = true;
+            btnResetForm.Click += BtnResetFormClickEH;
             // 
             // btnCreatePizza
             // 
