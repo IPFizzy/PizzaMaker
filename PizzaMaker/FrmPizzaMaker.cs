@@ -8,6 +8,7 @@
  */
 
 using PizzaMakerClassLibrary.Models;
+using PizzaMakerClassLibrary.Services.BusinessLogicLayer;
 
 namespace PizzaMaker
 {
@@ -15,6 +16,7 @@ namespace PizzaMaker
     {
         // Class level variable declarations
         private PizzaModel _pizza;
+        private PizzaLogic _pizzaLogic;
 
         /// <summary>
         /// Default constructor for FrmPizzaMaker
@@ -26,10 +28,15 @@ namespace PizzaMaker
             // Initialize the current order
             _pizza = new PizzaModel();
 
+            // Initialize the pizza logic object
+            _pizzaLogic = new PizzaLogic();
+
             // Disable the Create Pizza button
             btnCreatePizza.Enabled = false;
+
             // Disable the Reset Form button
             btnResetForm.Enabled = false;
+
             // Update the price of the pizza
             UpdatePrice();
 
@@ -99,7 +106,7 @@ namespace PizzaMaker
         private void ChbIngredientCheckedChangedEH(object sender, EventArgs e)
         {
             // Get the check box from the sender parameter
-            CheckBox checkbox = sender as CheckBox;
+            CheckBox? checkbox = sender as CheckBox;
 
             // Make sure the checkbox is not null
             if (checkbox != null)
@@ -144,7 +151,7 @@ namespace PizzaMaker
         private void RdoCrustCheckedChangedEH(object sender, EventArgs e)
         {
             // Get the radio button from the sender object
-            RadioButton radioButton = sender as RadioButton;
+            RadioButton? radioButton = sender as RadioButton;
 
             // Make sure the radio button is not null
             if (radioButton != null && radioButton.Checked)
@@ -165,7 +172,7 @@ namespace PizzaMaker
         private void HsbExtraGoodiesValueChangedEH(object sender, EventArgs e)
         {
             // Cast the sender object to an HScrollBar
-            HScrollBar scrollBar = sender as HScrollBar;
+            HScrollBar? scrollBar = sender as HScrollBar;
 
             // Make sure the scroll bar is not null
             if (scrollBar != null)
@@ -335,5 +342,27 @@ namespace PizzaMaker
                 }
             }
         } // End of ResetControls method
+
+        /// <summary>
+        /// Click event handler for btnCreatePizza
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnCreatePizzaClickEH(object sender, EventArgs e)
+        {
+            // Declare and initialize
+            bool isValidPizza = false;
+            int pizzasInOrder = -1;
+
+            // Use the pizzaLogic to call AddPizzaToOrder
+            (isValidPizza, pizzasInOrder) = _pizzaLogic.AddPizzaToOrder(_pizza);
+
+            // Check if the pizza was valid
+            if (isValidPizza)
+            {
+                // Reset the form
+                ResetForm();
+            }
+        }
     }
 }

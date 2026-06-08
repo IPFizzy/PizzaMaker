@@ -437,6 +437,7 @@
             btnCreatePizza.TabIndex = 14;
             btnCreatePizza.Text = "Create Pizza";
             btnCreatePizza.UseVisualStyleBackColor = true;
+            btnCreatePizza.Click += BtnCreatePizzaClickEH;
             // 
             // FrmPizzaMaker
             // 
