@@ -347,15 +347,17 @@
             // 
             hsbCheese.Location = new Point(-3, 86);
             hsbCheese.Name = "hsbCheese";
-            hsbCheese.Size = new Size(80, 20);
+            hsbCheese.Size = new Size(170, 20);
             hsbCheese.TabIndex = 8;
+            hsbCheese.ValueChanged += HsbExtraGoodiesValueChangedEH;
             // 
             // hsbSauce
             // 
             hsbSauce.Location = new Point(-3, 40);
             hsbSauce.Name = "hsbSauce";
-            hsbSauce.Size = new Size(80, 20);
+            hsbSauce.Size = new Size(170, 20);
             hsbSauce.TabIndex = 7;
+            hsbSauce.ValueChanged += HsbExtraGoodiesValueChangedEH;
             // 
             // lblDeliveryTime
             // 
@@ -369,10 +371,13 @@
             // 
             // dtpDeliveryTime
             // 
+            dtpDeliveryTime.CustomFormat = "MM/dd/yyyy hh:mm";
+            dtpDeliveryTime.Format = DateTimePickerFormat.Custom;
             dtpDeliveryTime.Location = new Point(322, 30);
             dtpDeliveryTime.Name = "dtpDeliveryTime";
-            dtpDeliveryTime.Size = new Size(283, 26);
+            dtpDeliveryTime.Size = new Size(218, 26);
             dtpDeliveryTime.TabIndex = 8;
+            dtpDeliveryTime.ValueChanged += DtpDeliveryTimeValueChangedEH;
             // 
             // lblColor
             // 
