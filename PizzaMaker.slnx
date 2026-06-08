@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="PizzaMaker/PizzaMaker.csproj" />
+  <Project Path="PizzaMakerClassLibrary/PizzaMakerClassLibrary.csproj" Id="f44572f4-2a1e-4cce-a943-3458f6dd561a" />
 </Solution>
