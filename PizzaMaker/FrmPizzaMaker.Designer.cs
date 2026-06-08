@@ -47,12 +47,12 @@
             rdoStuffedCrust = new RadioButton();
             rdoThinCrust = new RadioButton();
             grpExtraGoodies = new GroupBox();
-            hsbSauce = new HScrollBar();
-            hsbCheese = new HScrollBar();
-            lblAmountOfSauce = new Label();
-            lblCheese = new Label();
-            lblAmountOfCheese = new Label();
             lblSauce = new Label();
+            lblAmountOfCheese = new Label();
+            lblCheese = new Label();
+            lblAmountOfSauce = new Label();
+            hsbCheese = new HScrollBar();
+            hsbSauce = new HScrollBar();
             lblDeliveryTime = new Label();
             dtpDeliveryTime = new DateTimePicker();
             lblColor = new Label();
@@ -82,6 +82,7 @@
             txtName.Name = "txtName";
             txtName.Size = new Size(100, 26);
             txtName.TabIndex = 1;
+            txtName.Leave += TxtNameLeaveEH;
             // 
             // grpIngredients
             // 
@@ -287,29 +288,26 @@
             grpExtraGoodies.TabStop = false;
             grpExtraGoodies.Text = "Extra Goodies";
             // 
-            // hsbSauce
+            // lblSauce
             // 
-            hsbSauce.Location = new Point(-3, 40);
-            hsbSauce.Name = "hsbSauce";
-            hsbSauce.Size = new Size(80, 20);
-            hsbSauce.TabIndex = 7;
+            lblSauce.AutoSize = true;
+            lblSauce.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSauce.Location = new Point(139, 22);
+            lblSauce.Name = "lblSauce";
+            lblSauce.Size = new Size(28, 18);
+            lblSauce.TabIndex = 13;
+            lblSauce.Text = "00";
+            lblSauce.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // hsbCheese
+            // lblAmountOfCheese
             // 
-            hsbCheese.Location = new Point(-3, 86);
-            hsbCheese.Name = "hsbCheese";
-            hsbCheese.Size = new Size(80, 20);
-            hsbCheese.TabIndex = 8;
-            // 
-            // lblAmountOfSauce
-            // 
-            lblAmountOfSauce.AutoSize = true;
-            lblAmountOfSauce.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAmountOfSauce.Location = new Point(6, 22);
-            lblAmountOfSauce.Name = "lblAmountOfSauce";
-            lblAmountOfSauce.Size = new Size(127, 18);
-            lblAmountOfSauce.TabIndex = 10;
-            lblAmountOfSauce.Text = "Amount of Sauce";
+            lblAmountOfCheese.AutoSize = true;
+            lblAmountOfCheese.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAmountOfCheese.Location = new Point(6, 68);
+            lblAmountOfCheese.Name = "lblAmountOfCheese";
+            lblAmountOfCheese.Size = new Size(136, 18);
+            lblAmountOfCheese.TabIndex = 12;
+            lblAmountOfCheese.Text = "Amount of Cheese";
             // 
             // lblCheese
             // 
@@ -322,26 +320,29 @@
             lblCheese.Text = "00";
             lblCheese.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // lblAmountOfCheese
+            // lblAmountOfSauce
             // 
-            lblAmountOfCheese.AutoSize = true;
-            lblAmountOfCheese.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAmountOfCheese.Location = new Point(6, 68);
-            lblAmountOfCheese.Name = "lblAmountOfCheese";
-            lblAmountOfCheese.Size = new Size(136, 18);
-            lblAmountOfCheese.TabIndex = 12;
-            lblAmountOfCheese.Text = "Amount of Cheese";
+            lblAmountOfSauce.AutoSize = true;
+            lblAmountOfSauce.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAmountOfSauce.Location = new Point(6, 22);
+            lblAmountOfSauce.Name = "lblAmountOfSauce";
+            lblAmountOfSauce.Size = new Size(127, 18);
+            lblAmountOfSauce.TabIndex = 10;
+            lblAmountOfSauce.Text = "Amount of Sauce";
             // 
-            // lblSauce
+            // hsbCheese
             // 
-            lblSauce.AutoSize = true;
-            lblSauce.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSauce.Location = new Point(139, 22);
-            lblSauce.Name = "lblSauce";
-            lblSauce.Size = new Size(28, 18);
-            lblSauce.TabIndex = 13;
-            lblSauce.Text = "00";
-            lblSauce.TextAlign = ContentAlignment.MiddleLeft;
+            hsbCheese.Location = new Point(-3, 86);
+            hsbCheese.Name = "hsbCheese";
+            hsbCheese.Size = new Size(80, 20);
+            hsbCheese.TabIndex = 8;
+            // 
+            // hsbSauce
+            // 
+            hsbSauce.Location = new Point(-3, 40);
+            hsbSauce.Name = "hsbSauce";
+            hsbSauce.Size = new Size(80, 20);
+            hsbSauce.TabIndex = 7;
             // 
             // lblDeliveryTime
             // 
@@ -421,7 +422,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1029, 540);
+            ClientSize = new Size(634, 540);
             Controls.Add(btnCreatePizza);
             Controls.Add(btnResetForm);
             Controls.Add(lblPizzaPrice);
