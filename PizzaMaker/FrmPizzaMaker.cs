@@ -24,19 +24,17 @@ namespace PizzaMaker
         public FrmPizzaMaker()
         {
             InitializeComponent();
-
             // Initialize the current order
             _pizza = new PizzaModel();
-
             // Initialize the pizza logic object
             _pizzaLogic = new PizzaLogic();
 
             // Disable the Create Pizza button
             btnCreatePizza.Enabled = false;
-
             // Disable the Reset Form button
             btnResetForm.Enabled = false;
-
+            // Disable the See Full Order button
+            btnSeeFullOrder.Enabled = false;
             // Update the price of the pizza
             UpdatePrice();
 
@@ -360,8 +358,15 @@ namespace PizzaMaker
             // Check if the pizza was valid
             if (isValidPizza)
             {
+                // Enable the See Full Order button
+                btnSeeFullOrder.Enabled = true;
                 // Reset the form
                 ResetForm();
+            }
+            else
+            {
+                // Show a failure message to the user
+                MessageBox.Show("Your pizza order is not complete.");
             }
         }
     }
