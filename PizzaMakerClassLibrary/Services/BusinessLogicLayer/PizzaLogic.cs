@@ -6,5 +6,6 @@ namespace PizzaMakerClassLibrary.Services.BusinessLogicLayer
 {
     internal class PizzaLogic
     {
+
     }
 }

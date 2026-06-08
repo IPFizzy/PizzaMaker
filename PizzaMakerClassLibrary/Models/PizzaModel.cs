@@ -10,10 +10,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Drawing;
 
-namespace PizzaMaker.Models
+namespace PizzaMakerClassLibrary.Models
 {
-    internal class PizzaModel
+    public class PizzaModel
     {
         // Class properties
         public string ClientName { get; set; }
